@@ -14,7 +14,8 @@ public class Message {
 
     @Id
     private String id;
+    private String description;
+    private long size;
     private String text;
     private Date incomingDate;
-
 }
