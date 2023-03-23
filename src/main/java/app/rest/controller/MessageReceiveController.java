@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/messages")
-public class Receiver {
+public class MessageReceiveController {
 
     private final DateSetter dateSetter;
     private final MessageService messageService;
 
-    public Receiver(DateSetter dateSetter, MessageService messageService) {
+    public MessageReceiveController(DateSetter dateSetter, MessageService messageService) {
         this.dateSetter = dateSetter;
         this.messageService = messageService;
     }
