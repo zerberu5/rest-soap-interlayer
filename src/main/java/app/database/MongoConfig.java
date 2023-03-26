@@ -12,7 +12,7 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Override
     public MongoClient mongoClient() {
-        return MongoClients.create("mongodb://localhost:27017/mydatabase");
+        return MongoClients.create("mongodb://mongodb:27017/mydatabase");
     }
 
     @Override
