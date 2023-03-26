@@ -1,1 +1,31 @@
-# TODO: start mongoDB ahead of application
+version: '2'
+services:
+  rest-soap-interlayer:
+    container_name: r-s-i-docker
+    build: .
+    image: rsi-compose:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+    depends_on:
+      - mongodb
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/mydatabase
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - my-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  my-network:
+    driver: bridge
