@@ -1,4 +1,4 @@
-version: '2'
+version: '3.8'
 services:
   rest-soap-interlayer:
     container_name: r-s-i-docker
