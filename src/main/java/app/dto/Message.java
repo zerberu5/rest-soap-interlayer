@@ -18,4 +18,5 @@ public class Message {
     private long size;
     private String text;
     private Date incomingDate;
+    private boolean isFetched;
 }
