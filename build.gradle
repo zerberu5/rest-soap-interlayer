@@ -18,6 +18,10 @@ task devStart() {
 			workingDir '.'
 			commandLine 'docker-compose', 'up', '-d'
 		}
+		exec {
+			workingDir '.'
+			commandLine 'docker', 'image', 'prune', '-f' // removes old dangling docker image
+		}
 	}
 }
 
