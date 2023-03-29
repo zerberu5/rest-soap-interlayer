@@ -3,6 +3,7 @@ package app.rest.services;
 import app.database.MessageRepository;
 import app.dto.Message;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class MessageService {
@@ -15,5 +16,9 @@ public class MessageService {
 
     public void saveMessage(Message message) {
         messageRepository.save(message);
+    }
+
+    public List<Message> findAll() {
+        return messageRepository.findAll();
     }
 }
