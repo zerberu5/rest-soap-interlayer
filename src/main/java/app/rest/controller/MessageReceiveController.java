@@ -2,7 +2,7 @@ package app.rest.controller;
 
 
 import app.dto.Message;
-import app.rest.services.DateSetter;
+import app.rest.services.DateSetterService;
 import app.rest.services.MessageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/messages")
 public class MessageReceiveController {
 
-    private final DateSetter dateSetter;
+    private final DateSetterService dateSetter;
     private final MessageService messageService;
 
-    public MessageReceiveController(DateSetter dateSetter, MessageService messageService) {
+    public MessageReceiveController(DateSetterService dateSetter, MessageService messageService) {
         this.dateSetter = dateSetter;
         this.messageService = messageService;
     }

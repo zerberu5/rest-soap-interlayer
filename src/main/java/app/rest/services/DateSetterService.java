@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class DateSetter {
+public class DateSetterService {
 
     public void setCurrentDate(Message message) {
         message.setIncomingDate(new Date());
