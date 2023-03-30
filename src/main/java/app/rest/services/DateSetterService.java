@@ -8,7 +8,8 @@ import java.util.Date;
 @Service
 public class DateSetterService {
 
-    public void setCurrentDate(Message message) {
+    public Message addDate(Message message) {
         message.setIncomingDate(new Date());
+        return message;
     }
 }

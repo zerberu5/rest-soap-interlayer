@@ -25,8 +25,7 @@ public class MessageReceiveController {
 
     @PostMapping("/")
     public ResponseEntity<String> receiveMessage(@RequestBody Message message) {
-        dateSetter.setCurrentDate(message);
-        messageService.saveMessage(message);
+        messageService.saveMessage(dateSetter.addDate(message));
 
         // Replace with logger
         System.out.println(message);
