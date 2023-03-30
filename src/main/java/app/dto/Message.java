@@ -19,4 +19,5 @@ public class Message {
     private String text;
     private Date incomingDate;
     private boolean isFetched;
+    private Date fetchedDate;
 }
