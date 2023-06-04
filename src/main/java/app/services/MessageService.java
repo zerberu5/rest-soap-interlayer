@@ -1,4 +1,4 @@
-package app.rest.services;
+package app.services;
 
 import app.database.MessageRepository;
 import app.dto.Message;

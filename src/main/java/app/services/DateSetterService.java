@@ -1,4 +1,4 @@
-package app.rest.services;
+package app.services;
 
 import app.dto.Message;
 import org.springframework.stereotype.Service;

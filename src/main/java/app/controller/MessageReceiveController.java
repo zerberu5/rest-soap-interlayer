@@ -1,9 +1,9 @@
-package app.rest.controller;
+package app.controller;
 
 
 import app.dto.Message;
-import app.rest.services.DateSetterService;
-import app.rest.services.MessageService;
+import app.services.DateSetterService;
+import app.services.MessageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,12 +24,14 @@ public class MessageReceiveController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<String> receiveMessage(@RequestBody Message message) {
+    public ResponseEntity<String> saveMessage(@RequestBody Message message) {
         messageService.saveMessage(dateSetter.addDate(message));
+        return new ResponseEntity<>("Message received", HttpStatus.OK);
+    }
 
-        // Replace with logger
+    @PostMapping("/soap")
+    public ResponseEntity<String> forwardMessageToSoapServer(@RequestBody Message message) {
         System.out.println(message);
-
         return new ResponseEntity<>("Message received", HttpStatus.OK);
     }
 }
